@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6 em;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        .container , #quizForm{
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color:aquamarine ;
+        }
+div.container section, section form, #quizDataForm
+{
+    background-color: rgb(104, 109, 121);
+    
+
+}
+#quizDataForm
+{
+    line-height: 0.1em ;
+}
+
+        h2 {
+            color: #333;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            padding: 12px;
+            font-size: 16px;
+            width: auto;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            margin-top: 40px;
+        }
+
+        .contact-info {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+
+        .contact-info p {
+            font-size: 16px;
+            margin: 10px 0;
+        }
+        header {
+        background-color: #b1e3e3;
+        padding: 20px 0;
+        text-align: center;
+        margin: auto;
+        padding: 2px;
+        border: 1px solid beige;
+        
+    }
+    header nav {
+    margin-top: 0px;
+}
+header nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    list-style: none;
+}
+
+header nav ul li {
+    list-style: none;
+    width:20%;
+   
+}
+
+header nav ul li a {
+    font-size: 1.2rem;
+    color: black;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    border-radius: 5px;;
+}
+
+header nav ul li a:hover {
+    background-color: #47cdcd;
+    border-radius: 4px;
+}
+    </style>
+   
+</head>
+<body>
+    <header>
+        <h2>Contact Us - Quiz App</h2>
+        <header>
+            <nav>
+                <ul>
+                    <li id="one"><a href ="index.html">Home</a></li>
+                    <li class="kk"><a href="about.html">About us</a></li>
+                    <li class="kk"><a href="contact.html">Contact</a></li>
+                    
+                 </ul>
+          </nav>
+        </header>
+    </header>
+
+    <div class="container">
+        <section>
+            <h2>We'd Love to Hear From You!</h2>
+            <p>If you have any questions, suggestions, or feedback about the Quiz App, feel free to reach out to us. We value your input!</p>
+        </section>
+
+        <section class="contact-info">
+            <h2>Our Contact Information</h2>
+            <p><strong>Email:</strong> support@quizapp.com</p>
+            <p><strong>Phone:</strong> +1 (000) 111-1111</p>
+            <p><strong>Address:</strong> 123 Quiz Avenue, Quizzy City, 54321</p>
+        </section>
+
+        <section>
+            <h2>Contact Form</h2>
+            <form action="submit_contact_form.php" method="POST">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="6" required></textarea>
+
+                <input type="submit" value="Send Message">
+            </form>
+        </section>
+    </div>
+
+    
+
+    <!-- Form to add quiz data -->
+    <div id="quizForm">
+        <h2>Create a Quiz</h2>
+        <form id="quizDataForm">
+            <label for="question">Question:</label><br>
+            <input type="text" id="question" required><br>
+
+            <label for="option1">Option 1:</label><br>
+            <input type="text" id="option1" required><br>
+
+            <label for="option2">Option 2:</label><br>
+            <input type="text" id="option2" required><br>
+
+            <label for="option3">Option 3:</label><br>
+            <input type="text" id="option3" required><br>
+
+            <label for="option4">Option 4:</label><br>
+            <input type="text" id="option4" required><br>
+
+            <label for="answer">Correct Answer:</label><br>
+            <input type="text" id="answer" required><br>
+
+            <button type="submit">send us your questions</button>
+        </form>
+    </div>
+
+    <!-- Quiz Content -->
+    <div id="quizContent" style="display:none;">
+        <div class="question"></div>
+        <div class="answers"></div>
+        <button class="btn" id="hidden-button" onclick="submitAnswer()">Next</button>
+    </div>
+    <footer>
+        <p>&copy; 2024 Group B</p>
+    </footer>
+<script src="quizapp.js"></script>
+</body>
+</html>
